@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\pre-dexed\debug\classes-1061727efa20501d1e5667941eee96c56fc6a086.jar" />
+    </item>
+    <item
+        jar="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\pre-dexed\debug\classes-5f5edca1b0ebd17dfb1013301caf3f4edbb74fdc.jar" />
+    </item>
+    <item
+        jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-34a57f82165fcc191123ae4d70b3d0379c72c265.jar" />
+    </item>
+    <item
+        jar="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Androidworkpath\WeatherDiagram\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-d26bbecf833a4d4032c85ea96a21710ed8d7c93a.jar" />
+    </item>
+
+</items>
