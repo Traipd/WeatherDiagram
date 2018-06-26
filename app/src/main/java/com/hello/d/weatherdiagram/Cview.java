@@ -3,45 +3,55 @@ package com.hello.d.weatherdiagram;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.jar.Attributes;
-
 /**
- * Created by 太平人d on 2018/5/9.
+ * Created by 太平人d on 2018/5/11.
  */
-public class MyView extends View {
-
-    public MyView(Context context,AttributeSet attrs)
+public class Cview extends View {
+    private Path path;
+    public Cview(Context context,AttributeSet attrs)
     {
         super(context,attrs);
-
     }
-    /*画板长宽标准：480*675   */
-    protected void onDraw(Canvas canvas)
-    {
+
+
+
+    protected void onDraw(Canvas canvas){
+        int j=100;
         super.onDraw(canvas);
-        canvas.drawColor(Color.WHITE);
         Paint paint=new Paint();
-        paint.setAntiAlias(true);//抗锯齿
-
-        paint.setColor(Color.BLACK);
-        paint.setStrokeWidth(2f);
-
-        canvas.drawLine(20,40,20,620,paint);//纵轴
-        canvas.drawLine(20,40,10,50,paint);
-        canvas.drawLine(20,40,30,50,paint);
-
-        canvas.drawLine(20,620,450,620,paint);//横轴
-        canvas.drawLine(450,620,440,630,paint);
-        canvas.drawLine(450,620,440,610,paint);
-
+        paint.setStyle(Paint.Style.STROKE);
         paint.setTextSize(20);
-        canvas.drawText("温度值",30,40,paint);
-        canvas.drawText("星期",430,610,paint);
+        path=new Path();
+        path.moveTo(30,600);
+        path.lineTo(30,75);
+        path.lineTo(10,95);
+        path.moveTo(30,75);
+        path.lineTo(50,95);//到这里画了y轴
+        path.moveTo(30,600);
+        path.lineTo(50,600);
+        canvas.drawPath(path,paint);
+
+        path.moveTo(70,600);
+        while(j<=430)
+            path.lineTo(j+=20,600);
+        path.moveTo(440,600);
+        path.lineTo(400,580);
+        path.moveTo(440,600);
+        path.lineTo(400,620);//到这里画了x轴
+
+        PathEffect pathEffect=new DashPathEffect(new float[]{40,15},0);
+        paint.setPathEffect(pathEffect);
+        canvas.drawPath(path,paint);
+
+        canvas.drawText("温度值",50,40,paint);
+        canvas.drawText("星期",430,580,paint);
 
         String[] day={"周一","周二","周三","周四","周五","周六","周日"};//日期
 
@@ -53,7 +63,7 @@ public class MyView extends View {
         float [] dh={42,53,49,38,40,35,43}; //温度数据
         float [] dl={18,35,28,24,15,14,20};
 
-      //  float mid=midMath(dh,dl);//平均值
+        //  float mid=midMath(dh,dl);//平均值
         float max,min;//最大值 最小值
         max=dh[0];min=dl[0];
         for(int i=1;i<dh.length;i++)
@@ -87,17 +97,7 @@ public class MyView extends View {
             else{path1.lineTo(30+i*60,780-dl[i]*math);}
         }
         canvas.drawPath(path1,paint);
-    }
 
-    public float midMath( float [] dh,float [] dl)
-    {
-        float mid=0;
-        for(int i=0;i<dh.length;i++)
-        {
-            mid=mid+dh[i]+dl[i];
-        }
-            mid=mid/(2*dh.length);
-        return mid;
     }
 
 }
